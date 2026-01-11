@@ -120,7 +120,8 @@ To push the current branch and set the remote as upstream, use
     
     git push --set-upstream origin master
 
-To have this happen automatically for branches without a tracking upstream, see 'push.autoSetupRemote' in 'git help config'.
+To have this happen automatically for branches without a tracking upstream, 
+see 'push.autoSetupRemote' in 'git help config'.
 ```
 
 This error occurs after trying to ```git push```. The reason being that there is no upstream on the new repository. I basically just used the command they gave me. You can also change the config to not have to do this everytime you have a new repository, but I am not bothered by it.
