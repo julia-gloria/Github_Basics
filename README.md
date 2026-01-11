@@ -133,7 +133,7 @@ $ git push --set-upstream origin master
 After doing this, I successfully got my files from my working directory updated into my GitHub repository, and the markdown for the README was formatted correctly!
 
 ### Future Pushes
-The problems above only seem to have occurred in the initial push and commit of my repository. Afterwards, in the same GitBash terminal, I was able to ```git add```, ```git commit```, and ```git push``` without havign to add any extra lines of code. This is good documentation for myself to reflect back on if I need to check how to setup a working directory again.
+The problems above only seem to have occurred in the initial push and commit of my repository. Afterwards, in the same GitBash terminal, I was able to ```git add```, ```git commit```, and ```git push``` without having to add any extra lines of code. This is good documentation for myself to reflect back on if I need to check how to setup a working repository again.
 
 ## Future Additions
-I may make additional documentation for the markdown language, setting up SSH in a way that makes sense to me, and trying the RSA key instead of the ED25519 key, but for now, I am pretty confident in my abilities to be able to use this for future engineering projects.
+I may make additional documentation for the markdown language, setting up SSH in a way that makes sense to me, and trying the RSA key instead of the ED25519 key, but for now, I am pretty confident in my abilities to be able to use this for future engineering projects. This is a living document and could be re-arranged depending on how large of a scope this document gets, I may have to reformat the README to point to other documents in the same repository for easier access and organization. For now, I think this is fine as is.
