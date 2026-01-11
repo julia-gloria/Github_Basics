@@ -50,7 +50,7 @@ Hi user-name! You've successfully authenticated, but GitHub does not provide she
 
 If you do not get this response you should look at the GitHub's [documentation here](https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey). I got a permission denied error the first time doing this, and I did everything perfectly except making the SSH Key a signed key instead of an Authentication Key. For some reason the Authentication Key worked with the generated ED25519 key. Maybe an RSA key would work better, but I haven't tried that yet.
 
-### How to Push
+## How to Push
 
 From my current understanding, you first need your GitBash in the working directory of the folders you. For Windows, that is using ```cd``` until you get to the working directory that you'd like to use.
 
@@ -90,9 +90,7 @@ $ git push
 
 But I got some errors from doing this.
 
-#### Author Identity Unknown Error
-This error occurs right after trying to ```git commit -m "[message]"```. I'm guessing this error occurs because I had put just Authentication Key instead of Signed Key for the SSH Key. Nonetheless, I was able to get around it with the error message they gave me:
-
+### Author Identity Unknown Error
 ``` 
 Author identity unknown
 
@@ -107,13 +105,34 @@ to set your account's default identity.
 Omit --global to set the identity only in this repository.
 ```
 
+This error occurs right after trying to ```git commit -m "[message]"```. I'm guessing this error occurs because I had put just Authentication Key instead of Signed Key for the SSH Key. Nonetheless, I was able to get around it with the error message they gave me:
+
 So I was able to fix this issue by using my email address in the first command.
 
-#### No Upstream Branch Error
-This error occurs after trying to ```git push```. The reason being that there is no upstream on the new repository. I basically just used the command they gave me.
+```git-bash
+$ git config --global user.email "you@example.com"
+``` 
+
+### No Upstream Branch Error
+```
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+    
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking upstream, see 'push.autoSetupRemote' in 'git help config'.
+```
+
+This error occurs after trying to ```git push```. The reason being that there is no upstream on the new repository. I basically just used the command they gave me. You can also change the config to not have to do this everytime you have a new repository, but I am not bothered by it.
 
 ```git-bash
 $ git push --set-upstream origin master
 ```
 
 After doing this, I successfully got my files from my working directory updated into my GitHub repository, and the markdown for the README was formatted correctly!
+
+### Future Pushes
+The problems above only seem to have occurred in the initial push and commit of my repository. Afterwards, in the same GitBash terminal, I was able to ```git add```, ```git commit```, and ```git push``` without havign to add any extra lines of code. This is good documentation for myself to reflect back on if I need to check how to setup a working directory again.
+
+## Future Additions
+I may make additional documentation for the markdown language, setting up SSH in a way that makes sense to me, and trying the RSA key instead of the ED25519 key, but for now, I am pretty confident in my abilities to be able to use this for future engineering projects.
